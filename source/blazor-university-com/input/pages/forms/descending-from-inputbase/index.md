@@ -63,7 +63,7 @@ byte HexStringToByte(string hex)
   const string HexChars = "0123456789abcdef";
 
   hex = hex.ToLowerInvariant();
-  int result = (HexChars.IndexOf(hex[0]) \* 16) + HexChars.IndexOf(hex[1]);
+  int result = (HexChars.IndexOf(hex[0]) * 16) + HexChars.IndexOf(hex[1]);
   return (byte)result;
 }
 ```
