@@ -16,7 +16,9 @@ Implementing `InputBase<T>` is simply a case of implementing one abstract method
 `InputBase<T>` is a generic class that has a property of type `T` named `Value`.
 Because web browsers work with string values, this component needs a way to convert a value of type `T` to and from a string.
 
+```cs
 protected abstract bool TryParseValueFromString(string value, out T result, out string validationErrorMessage);
+```
 
 `TryParseValueFromString` is an abstract method that should be overridden in order to convert a string value from an
 HTML `<input>` element (or other source that works with strings) into the target type `T`.
@@ -25,8 +27,9 @@ conversion failed.
 This is used to provide a validation error message along with a visual invalid state so the user is aware the attempt
 to set the value failed.
 
+```cs
 protected virtual string FormatValueAsString(T value)
-
+```
 `FormatValueAsString` is the inverse of `TryParseValueFromString`.
 In cases where a simple `Value.ToString()` is not sufficient to translate a value of `T` back into the browser UI layer,
 this method should be overridden to perform the task correctly.
